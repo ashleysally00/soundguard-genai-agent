@@ -1,11 +1,13 @@
 # SoundGuard: Emergency Sound Detection with GenAI
 
+Live Dashboard: Link to the Airtable dashboard will be available post-competition, April 20, 2025.
+
 ## Overview
 SoundGuard is a capstone project for the **Gen AI Intensive Course Capstone 2025Q1**, a 5-day Gen AI Intensive Course with Google. It uses generative AI to detect emergency-related sounds (e.g., glass breaking, sirens) and generate actionable responses for smart home safety. The project demonstrates three GenAI capabilities: **Audio Understanding**, **Few-Shot Prompting**, and **Function Calling/Agents**, creating a pipeline that detects sounds, generates alerts, and triggers smart home responses.
 
 The project is implemented in a Kaggle notebook, leveraging the ESC-50 dataset for audio classification and YAMNet for audio understanding. The goal is to explore how GenAI can enhance safety in smart homes, public safety systems, or disaster response by understanding sounds and reacting appropriately.
 
-🔗 **View the Kaggle Notebook**: View the notebook here (link to be inserted) after the competition is over (April 20, 2025). 
+**View the Kaggle Notebook**: Link will be available post-competition, April 20, 2025.
 
 ## Features
 - **Audio Understanding**: Classifies emergency sounds (e.g., glass breaking, sirens) using YAMNet and the ESC-50 dataset.
