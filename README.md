@@ -1,33 +1,49 @@
 # SoundGuard: Emergency Sound Detection with GenAI
 
+[![Hugging Face Space](https://img.shields.io/badge/Demo-HuggingFace_Space-orange?logo=huggingface)](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent)
+![Google Cloud](https://img.shields.io/badge/Powered%20by-Google%20Cloud-blue?logo=googlecloud)
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+
+---
+
 ## 🎧 Live Demo: SoundGuard Smart Agent
 
-You can interact with the SoundGuard smart home agent on Hugging Face Spaces.  
+You can interact with the SoundGuard smart home agent on Hugging Face Spaces.
 
 The agent analyzes real emergency sound clips (like sirens, glass breaking, and baby cries), explains what it hears, and simulates an intelligent response.
 
 👉 [Launch the SoundGuard Agent Demo](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent)
 
+---
+
 ## Overview
-**SoundGuard** is a capstone project for the **Gen AI Intensive Course Capstone 2025Q1**, a 5-day GenAI training program with Google. It uses generative AI to detect emergency-related sounds (e.g., glass breaking, sirens) and generate actionable responses for smart home safety.
+
+SoundGuard is a capstone project for the **Gen AI Intensive Course Capstone 2025Q1**, a 5-day GenAI training program with Google. It uses generative AI to detect emergency-related sounds (e.g., glass breaking, sirens) and generate actionable responses for smart home safety.
 
 The project demonstrates three core GenAI capabilities:
 - **Audio Understanding**
 - **Few-Shot Prompting**
-- **Function Calling/Agents**
+- **Function Calling / Agents**
 
 It creates a pipeline that detects sounds, generates alerts, and simulates intelligent agent responses.
 
+As part of the deployment, the project integrates with **Google Cloud Storage (GCS)** to host a CSV file containing metadata and public URLs for emergency audio clips. These clips are streamed directly into the Hugging Face demo, enabling realistic interactions with the AI agent.
+
 The implementation is hosted in a Kaggle notebook and leverages the ESC-50 dataset for audio classification using YAMNet. The goal is to explore how GenAI can enhance safety in smart homes, public safety systems, and disaster response scenarios.
 
-**View the Kaggle Notebook**: _(Link will be available post-competition, April 20, 2025)_
+📘 **View the Kaggle Notebook**  
+_(Link will be available post-competition, April 20, 2025)_
+
+---
 
 ## Features
-- **Audio Understanding**: Classifies emergency sounds (e.g., glass breaking, sirens) using YAMNet and ESC-50.
+
+- **Audio Understanding**: Classifies emergency sounds (e.g., glass breaking, sirens) using YAMNet and ESC-50  
 - **Few-Shot Prompting**: Generates natural-language alerts like:  
-  _“Glass breaking was detected in a smart home at 2 AM. This could indicate a potential break-in…”_
-- **Function Calling & Agents**: Simulates a smart home assistant that responds to detected emergencies (e.g., locking doors, alerting authorities).
-- **End-to-End Pipeline**: Detects sounds → generates alerts → triggers contextual responses, demonstrating a real-world GenAI use case.
+  _“Glass breaking was detected in a smart home at 2 AM. This could indicate a potential break-in…”_  
+- **Function Calling & Agents**: Simulates a smart home assistant that responds to detected emergencies (e.g., locking doors, alerting authorities)  
+- **End-to-End Pipeline**: Detects sounds → generates alerts → triggers contextual responses, demonstrating a real-world GenAI use case  
+- **Google Cloud Storage Integration**: Uses GCS to serve metadata and URLs for streaming real audio into the Hugging Face demo
 
 
 ## How to Run
