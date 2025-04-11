@@ -1,19 +1,34 @@
 # SoundGuard: Emergency Sound Detection with GenAI
 
-Live Dashboard: Link to the Airtable dashboard will be available post-competition, April 20, 2025.
+## 🎧 Live Demo: SoundGuard Smart Agent
+
+You can interact with the SoundGuard smart home agent on Hugging Face Spaces.  
+
+The agent analyzes real emergency sound clips (like sirens, glass breaking, and baby cries), explains what it hears, and simulates an intelligent response.
+
+👉 [Launch the SoundGuard Agent Demo](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent)
 
 ## Overview
-SoundGuard is a capstone project for the **Gen AI Intensive Course Capstone 2025Q1**, a 5-day Gen AI Intensive Course with Google. It uses generative AI to detect emergency-related sounds (e.g., glass breaking, sirens) and generate actionable responses for smart home safety. The project demonstrates three GenAI capabilities: **Audio Understanding**, **Few-Shot Prompting**, and **Function Calling/Agents**, creating a pipeline that detects sounds, generates alerts, and triggers smart home responses.
+**SoundGuard** is a capstone project for the **Gen AI Intensive Course Capstone 2025Q1**, a 5-day GenAI training program with Google. It uses generative AI to detect emergency-related sounds (e.g., glass breaking, sirens) and generate actionable responses for smart home safety.
 
-The project is implemented in a Kaggle notebook, leveraging the ESC-50 dataset for audio classification and YAMNet for audio understanding. The goal is to explore how GenAI can enhance safety in smart homes, public safety systems, or disaster response by understanding sounds and reacting appropriately.
+The project demonstrates three core GenAI capabilities:
+- **Audio Understanding**
+- **Few-Shot Prompting**
+- **Function Calling/Agents**
 
-**View the Kaggle Notebook**: Link will be available post-competition, April 20, 2025.
+It creates a pipeline that detects sounds, generates alerts, and simulates intelligent agent responses.
+
+The implementation is hosted in a Kaggle notebook and leverages the ESC-50 dataset for audio classification using YAMNet. The goal is to explore how GenAI can enhance safety in smart homes, public safety systems, and disaster response scenarios.
+
+**View the Kaggle Notebook**: _(Link will be available post-competition, April 20, 2025)_
 
 ## Features
-- **Audio Understanding**: Classifies emergency sounds (e.g., glass breaking, sirens) using YAMNet and the ESC-50 dataset.
-- **Few-Shot Prompting**: Generates natural-language alerts (e.g., "Glass breaking was detected in a smart home at 2 AM. This could indicate a potential break-in…").
-- **Function Calling/Agents**: Simulates a smart home agent that responds to emergencies (e.g., locking doors, calling authorities, sending notifications).
-- **Comprehensive Pipeline**: Detects sounds → generates alerts → triggers actions, demonstrating a practical GenAI application for smart home safety.
+- **Audio Understanding**: Classifies emergency sounds (e.g., glass breaking, sirens) using YAMNet and ESC-50.
+- **Few-Shot Prompting**: Generates natural-language alerts like:  
+  _“Glass breaking was detected in a smart home at 2 AM. This could indicate a potential break-in…”_
+- **Function Calling & Agents**: Simulates a smart home assistant that responds to detected emergencies (e.g., locking doors, alerting authorities).
+- **End-to-End Pipeline**: Detects sounds → generates alerts → triggers contextual responses, demonstrating a real-world GenAI use case.
+
 
 ## How to Run
 1. **Access the Kaggle Notebook**:
