@@ -16,6 +16,18 @@ The agent analyzes real emergency sound clips (like sirens, glass breaking, and 
 
 ---
 
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Documentation](#documentation)
+- [How to Run](#how-to-run)
+- [Project Structure](#project-structure)
+- [Challenges and Solutions](#challenges-and-solutions)
+- [Future Work](#future-work)
+- [Acknowledgments](#acknowledgments)
+- [Author](#author)
+
+
 ## Overview
 
 SoundGuard is a capstone project for the **Gen AI Intensive Course Capstone 2025Q1**, a 5-day GenAI training program with Google. It uses generative AI to detect emergency-related sounds (e.g., glass breaking, sirens) and generate actionable responses for smart home safety.
