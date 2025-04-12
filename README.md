@@ -17,16 +17,17 @@ The agent analyzes real emergency sound clips (like sirens, glass breaking, and 
 ---
 
 ## Table of Contents
+- [Live Demo](#-live-demo-soundguard-smart-agent)
 - [Overview](#overview)
 - [Features](#features)
-- [Documentation](#documentation)
 - [How to Run](#how-to-run)
 - [Project Structure](#project-structure)
+- [ML Pipeline](#ml-pipeline)
+- [Evaluation & Monitoring](#evaluation--monitoring)
 - [Challenges and Solutions](#challenges-and-solutions)
 - [Future Work](#future-work)
 - [Acknowledgments](#acknowledgments)
 - [Author](#author)
-
 
 ## Overview
 
@@ -175,6 +176,23 @@ Here’s how we did it:
 > 📂 See full cloud integration steps in [`docs/cloud_integration.md`](docs/cloud_integration.md)  
 > 🎧 Try it live: [SoundGuard Agent on Hugging Face Spaces](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent)
 
+## 📊 Evaluation & Monitoring
+
+While SoundGuard is a prototype, it includes foundational elements for evaluation and observability:
+
+- **Confidence Thresholding**  
+  YAMNet predictions are evaluated by their confidence scores. Predictions with low confidence (< 0.02) trigger a fallback to ground-truth labels, improving reliability in demo scenarios.
+
+- **Manual Review of Top-5 Predictions**  
+  Each prediction is logged with its top 5 labels and scores to identify edge cases where emergency sounds may be misclassified.
+
+- **Sample Visualization**  
+  MFCC plots and waveform visualizations are used during development to inspect audio quality, clipping, and signal characteristics.
+
+- **Demo-Level Monitoring**  
+  For the Hugging Face interface, sound classifications and agent responses are displayed in real time to simulate interactive observability.
+
+Future iterations may include formal metrics (e.g., precision/recall), user feedback logging, and integration with alerting dashboards for real-time monitoring.
 
 
 ## Future Work
