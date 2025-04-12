@@ -76,6 +76,28 @@ _(Link will be available post-competition, April 20, 2025)_
 - **Step 4: Few-Shot Prompting** - Generates natural-language alerts based on detected sounds.
 - **Step 5: Function Calling/Agents** - Simulates a smart home agent that responds to emergencies with actions like locking doors and calling authorities.
   
+## 🧠 Audio Classification with YAMNet
+
+To identify emergency sounds, we used **YAMNet**, a pretrained audio event classifier developed by Google and available on [TensorFlow Hub](https://tfhub.dev/google/yamnet/1).
+
+YAMNet was trained on **AudioSet**, a large dataset of labeled YouTube audio clips, and can detect 521 audio classes. In our pipeline, it receives 16kHz mono waveforms and returns:
+
+- **Predicted Class Labels**
+- **Class Scores**
+- **Embeddings** (for advanced use)
+
+### Why YAMNet?
+
+YAMNet is lightweight and fast — making it well-suited for near real-time sound classification. It’s ideal for edge cases like detecting:
+
+- 👶 Crying baby
+- 🚨 Siren
+- 💥 Glass breaking
+
+If YAMNet's prediction confidence is too low, we use a **ground truth fallback** based on ESC-50 labels to ensure emergency events are reliably flagged.
+
+This step powers the core detection logic behind the Gradio demo interface.
+
 
 ## Challenges and Solutions
 YAMNet struggled to classify ESC-50 emergency sounds accurately, sometimes labeling sounds like glass breaking as “Silence” or sirens as unrelated noises. This happened because YAMNet was trained on AudioSet’s noisy YouTube clips, which differ from ESC-50’s clean, short recordings, and its confidence scores are often low (e.g., 0.01) even for correct predictions, as noted in the [YAMNet documentation](https://github.com/tensorflow/models/tree/master/research/audioset/yamnet). To fix this, we added a fallback in Step 3: if YAMNet’s confidence is below 0.02, we use ESC-50’s known labels (e.g., siren) to flag emergencies reliably. This ensured the Hugging Face demo worked smoothly. See the Kaggle notebook’s “Notes on YAMNet Classification Challenges” in Step 3 for details.
