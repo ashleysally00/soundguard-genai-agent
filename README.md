@@ -80,6 +80,17 @@ _(Link will be available post-competition, April 20, 2025)_
 ## Challenges and Solutions
 YAMNet struggled to classify ESC-50 emergency sounds accurately, sometimes labeling sounds like glass breaking as “Silence” or sirens as unrelated noises. This happened because YAMNet was trained on AudioSet’s noisy YouTube clips, which differ from ESC-50’s clean, short recordings, and its confidence scores are often low (e.g., 0.01) even for correct predictions, as noted in the [YAMNet documentation](https://github.com/tensorflow/models/tree/master/research/audioset/yamnet). To fix this, we added a fallback in Step 3: if YAMNet’s confidence is below 0.02, we use ESC-50’s known labels (e.g., siren) to flag emergencies reliably. This ensured the Hugging Face demo worked smoothly. See the Kaggle notebook’s “Notes on YAMNet Classification Challenges” in Step 3 for details.
 
+### 🔗 GitHub Integration with Hugging Face
+
+To ensure the demo reflects the full logic and emergency response pipeline built in the Kaggle notebook, we connected our **GitHub repo** to the Hugging Face Space. This allowed us to:
+
+- Reuse the same `app.py` and CSV files generated from the Kaggle notebook
+- Maintain the core logic from our original classification and response system
+- Push updates from GitHub to Hugging Face without duplicating code
+
+The Hugging Face Space pulls the `app.py` and `emergency_sounds_demo_with_urls.csv` directly from the GitHub repository. This setup ensures that any updates to the agent logic, audio sources, or interface design remain in sync between platforms.
+
+
 ## 🔗 Hugging Face Audio Integration
 
 To demonstrate how our agent responds to real emergencies, we built an **interactive GUI demo** using Gradio on Hugging Face Spaces. The goal was to let users experience the system as if it were deployed in the real world. When a sound occurs, and an AI agent hears it, the agent explains what it was, and responds helpfully.
