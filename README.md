@@ -48,6 +48,35 @@ _(Link will be available post-competition, April 20, 2025)_
 
 ---
 
+## 🔁 ML Pipeline Overview
+
+SoundGuard follows a real-world machine learning pipeline to detect emergency sounds and simulate agent responses. The pipeline consists of:
+
+1. **Data Ingestion**  
+   - Load the ESC-50 dataset (CSV metadata and `.wav` audio files)
+   - Filter and sample emergency-related classes (e.g., siren, glass breaking)
+
+2. **Audio Preprocessing**  
+   - Resample audio to 16kHz mono (YAMNet requirement)
+   - Trim silence, normalize amplitude, and extract MFCCs (optional)
+
+3. **Audio Classification**  
+   - Use Google’s YAMNet (from TensorFlow Hub) to classify each audio clip
+   - Apply a fallback to ground-truth labels if confidence is too low
+
+4. **Post-Processing & Labeling**  
+   - Select high-confidence emergency predictions
+   - Export metadata with public GCS audio URLs for integration
+
+5. **Conversational Agent Simulation**  
+   - Use few-shot prompting to simulate reasoning and actions
+   - Trigger conversational outputs based on classification (e.g., "I heard a siren...")
+
+6. **Frontend Interface (Gradio + Hugging Face)**  
+   - Serve a live chatbot demo on Hugging Face Spaces
+   - Audio clips stream from Google Cloud Storage and agent responds to user queries in real time
+
+
 ## Features
 
 - **Audio Understanding**: Classifies emergency sounds (e.g., glass breaking, sirens) using YAMNet and ESC-50  
