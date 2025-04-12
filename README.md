@@ -80,6 +80,40 @@ _(Link will be available post-competition, April 20, 2025)_
 ## Challenges and Solutions
 YAMNet struggled to classify ESC-50 emergency sounds accurately, sometimes labeling sounds like glass breaking as “Silence” or sirens as unrelated noises. This happened because YAMNet was trained on AudioSet’s noisy YouTube clips, which differ from ESC-50’s clean, short recordings, and its confidence scores are often low (e.g., 0.01) even for correct predictions, as noted in the [YAMNet documentation](https://github.com/tensorflow/models/tree/master/research/audioset/yamnet). To fix this, we added a fallback in Step 3: if YAMNet’s confidence is below 0.02, we use ESC-50’s known labels (e.g., siren) to flag emergencies reliably. This ensured the Hugging Face demo worked smoothly. See the Kaggle notebook’s “Notes on YAMNet Classification Challenges” in Step 3 for details.
 
+## 🔗 Hugging Face Audio Integration
+
+To demonstrate how our agent responds to real emergencies, we built an **interactive GUI demo** using Gradio on Hugging Face Spaces. The goal was to let users experience the system as if it were deployed in the real world. When a sound occurs, and an AI agent hears it, the agent explains what it was, and responds helpfully.
+
+But Hugging Face Spaces can’t store thousands of audio files. So, to keep the demo lightweight and responsive, we used **Google Cloud Storage (GCS)** to host a subset of emergency sounds.
+
+Here’s how we did it:
+
+1. **Created a Filtered Emergency Subset**  
+   Selected ~50 emergency-labeled audio clips from the ESC-50 dataset (e.g., `siren`, `glass_breaking`, `crying_baby`) to simulate a range of urgent scenarios.
+
+2. **Exported Metadata as CSV**  
+   Saved metadata for these filtered samples (filename, category, etc.) to a CSV file:  
+   `emergency_sounds_demo.csv`
+
+3. **Uploaded Audio to GCS**  
+   Zipped the selected `.wav` files and uploaded them to a **Google Cloud Storage bucket**.  
+   We made them publicly accessible so they could be streamed in real time.
+
+4. **Generated a New CSV with Public URLs**  
+   Added a column (`audio_url`) to point each row to the correct file in the GCS bucket.  
+   Final file used in the Gradio demo:  
+   `emergency_sounds_demo_with_urls.csv`
+
+5. **Integrated with Gradio Chatbot**  
+   The `app.py` file in our Hugging Face Space reads from the CSV and streams audio into the interface.  
+   It selects a random emergency sound, plays it, and the chatbot agent **analyzes the sound, explains what it hears, and offers an emergency response** — just like a smart home assistant.
+
+---
+
+> 📂 See full cloud integration steps in [`docs/cloud_integration.md`](docs/cloud_integration.md)  
+> 🎧 Try it live: [SoundGuard Agent on Hugging Face Spaces](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent)
+
+
 
 ## Future Work
 - Fine-tune YAMNet on ESC-50 to improve classification accuracy.
