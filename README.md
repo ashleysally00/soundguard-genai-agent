@@ -75,9 +75,11 @@ _(Link will be available post-competition, April 20, 2025)_
 - **Step 3: Audio Understanding** - Uses YAMNet to classify emergency sounds, with a ground truth fallback for reliability.
 - **Step 4: Few-Shot Prompting** - Generates natural-language alerts based on detected sounds.
 - **Step 5: Function Calling/Agents** - Simulates a smart home agent that responds to emergencies with actions like locking doors and calling authorities.
+  
 
 ## Challenges and Solutions
-YAMNet’s classification performance on ESC-50 was limited due to a domain mismatch (AudioSet vs. ESC-50) and uncalibrated scores, as noted in the [YAMNet documentation](https://tfhub.dev/google/yamnet/1). To address this, we implemented a ground truth fallback in Step 3, using ESC-50 labels to flag emergencies when YAMNet’s confidence is low (< 0.02). This ensures the pipeline works for the demo, as detailed in the notebook’s “Notes on YAMNet Classification Challenges” section.
+YAMNet struggled to classify ESC-50 emergency sounds accurately, sometimes labeling sounds like glass breaking as “Silence” or sirens as unrelated noises. This happened because YAMNet was trained on AudioSet’s noisy YouTube clips, which differ from ESC-50’s clean, short recordings, and its confidence scores are often low (e.g., 0.01) even for correct predictions, as noted in the [YAMNet documentation](https://github.com/tensorflow/models/tree/master/research/audioset/yamnet). To fix this, we added a fallback in Step 3: if YAMNet’s confidence is below 0.02, we use ESC-50’s known labels (e.g., siren) to flag emergencies reliably. This ensured the Hugging Face demo worked smoothly. See the Kaggle notebook’s “Notes on YAMNet Classification Challenges” in Step 3 for details.
+
 
 ## Future Work
 - Fine-tune YAMNet on ESC-50 to improve classification accuracy.
