@@ -174,7 +174,7 @@ Here’s how we did it:
 ---
 
 > 📂 See full cloud integration steps in [Cloud Integration Details](cloud_integration.md)
-)  
+
 > 🎧 Try it live: [SoundGuard Agent on Hugging Face Spaces](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent)
 
 ## 📊 Evaluation & Monitoring
