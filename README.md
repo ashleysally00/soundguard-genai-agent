@@ -12,7 +12,7 @@ You can interact with the SoundGuard smart home agent on Hugging Face Spaces.
 
 The agent analyzes real emergency sound clips (like sirens, glass breaking, and baby cries), explains what it hears, and simulates an intelligent response.
 
-👉 [Launch the SoundGuard Agent Demo](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent)
+👉 [Launch the SoundGuard Agent Demo](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent) </br>
 ✏️ [Check out the blog post about the project journey here](https://ashleysally00.github.io/blog.html)
 
 
