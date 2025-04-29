@@ -14,7 +14,7 @@ The agent analyzes real emergency sound clips (like sirens, glass breaking, and 
 
 👉 [Launch the SoundGuard Agent Demo](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent) </br>
 
-📝 [Check out the blog post about the project journey here](https://ashleysally00.github.io/blog.html)
+📝 [Read about the Kaggle GenAI Agent Project](https://ashleysally00.github.io/blog/2025-04-16-soundguard-emergency-sound-detection.html)
 
 
 ---
