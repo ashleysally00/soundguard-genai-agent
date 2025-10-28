@@ -5,8 +5,23 @@
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 
 ---
-<a id="live-demo"></a>
-## 🎧 Live Demo: SoundGuard Smart Agent
+
+## Table of Contents
+
+- [Live Demo](#-live-demo----soundguard-smart-agent)
+- [Overview](#overview)
+- [Features](#features)
+- [How to Run](#how-to-run)
+- [Project Structure](#project-structure)
+- [ML Pipeline](#-ml-pipeline-overview)
+- [Evaluation & Monitoring](#-evaluation--monitoring)
+- [Challenges and Solutions](#-github-integration-with-hugging-face)
+- [Future Work](#future-work)
+- [Acknowledgments](#acknowledgments)
+- [Author](#author)
+  
+
+## 🎧 Live Demo -- SoundGuard Smart Agent
 
 You can interact with the SoundGuard smart home agent on Hugging Face Spaces.
 
@@ -17,20 +32,6 @@ The agent analyzes real emergency sound clips (like sirens, glass breaking, and 
 📝 [Read about the Kaggle GenAI Agent Project](https://ashleysally00.github.io/2025/04/16/soundguard-emergency-sound-detection.html)
 
 ---
-
-  ## Table of Contents
-- [Live Demo](#live-demo)
-- [Overview](#overview)
-- [Features](#features)
-- [How to Run](#how-to-run)
-- [Project Structure](#project-structure)
-- [ML Pipeline](#ml-pipeline-overview)
-- [Evaluation & Monitoring](#evaluation-monitoring)
-- [Challenges and Solutions](#challenges-and-solutions)
-- [Future Work](#future-work)
-- [Acknowledgments](#acknowledgments)
-- [Author](#author)
-
 
 ## Overview
 
@@ -52,7 +53,6 @@ _(Link will be available post-competition, April 20, 2025)_
 
 ---
 
-<a id="ml-pipeline-overview"></a>
 ## 🔁 ML Pipeline Overview
 
 SoundGuard follows a real-world machine learning pipeline to detect emergency sounds and simulate agent responses. The pipeline consists of:
@@ -182,7 +182,6 @@ Here’s how we did it:
 > 🎧 Try it live: [SoundGuard Agent on Hugging Face Spaces](https://huggingface.co/spaces/ashleysally00/soundguard-genai-agent)
 
 
-<a id="evaluation-monitoring"></a>
 ## 📊 Evaluation & Monitoring
 
 While SoundGuard is a prototype, it includes foundational elements for evaluation and observability:
